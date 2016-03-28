@@ -1,0 +1,94 @@
+name:                Wavelet
+version:             0.1.0.0
+synopsis:            Wavelet-tree based search engine
+license:             AllRightsReserved
+license-file:        LICENSE
+author:              John Haynes
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable TopK
+  main-is:	       TopK.hs
+  build-depends:       base, bytestring, cereal, heaps, smashy, vector, vector-mmap
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O3 -msse4.2
+
+executable MultiK
+  main-is:             MultiK.hs
+  build-depends:       base, bytestring, cereal, heaps, smashy, vector, vector-mmap
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O3 -msse4.2
+
+executable FrontEnd
+  main-is:             FrontEnd.hs
+  build-depends:       base, bytestring, cereal, blaze-html, text, transformers, Spock, wai-middleware-static, containers, unordered-containers, vector, vector-mmap, smashy, warcfile, edit-distance
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O3 -msse4.2
+
+executable Exhaust
+  main-is:	       Exhaust.hs
+  build-depends:       base, bytestring, cereal, vector, vector-mmap, smashy, async, split
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O3 -msse4.2 -threaded
+
+executable GenSpelling
+  main-is:	       GenSpelling.hs
+  build-depends:       base, bytestring, cereal, vector, unordered-containers, smashy, vector-mmap
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O3 -msse4.2
+
+executable Post
+  main-is:	       Post.hs
+  build-depends:       base, bytestring, cereal, vector, vector-mmap, unix, primitive, smashy
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O3 -msse4.2
+
+executable Go
+  main-is:             Go.hs
+  build-depends:       base, bytestring, cereal, vector, spool, smashy, warcfile, vector-mmap
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O3 -msse4.2
+  
+executable InPlace
+  main-is:             InPlace.hs
+  build-depends:       base, bytestring, directory, primitive, unix, vector, vector-mmap
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O3 -msse4.2
+
+executable ReverseMap
+  main-is:             ReverseMap.hs
+  build-depends:       base, bytestring, cereal, vector, smashy, vector-mmap
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O3 -msse4.2
+
+executable Next
+  main-is:             Next.hs
+  build-depends:       base, warcfile, bytestring, cereal, vector-mmap, containers, smashy, vector
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O3 -msse4.2
+  
+executable Explore
+  main-is:             Explore.hs
+  build-depends:       base, bytestring, cereal, edit-distance, containers, vector, vector-mmap, smashy, warcfile, unordered-containers
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O3 -msse4.2
+  
+executable Query
+  main-is:             Query.hs
+  build-depends:       base, bytestring, cereal, vector, vector-mmap, transformers, directory, smashy
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O3 -msse4.2
+
+  
