@@ -127,7 +127,7 @@ searchTerms hm rm len node terms = do
                . map (scoreForDoc avgDocLength numDocs termInfos)
                $ docs
 
-    urls <- mapM (HM.get rm . \(Document pos _ ,x) -> (access node (fromIntegral pos+1))) scored
+    urls <- mapM (HM.get rm . \(Document pos _ ,x) -> (access node (fromIntegral pos+2))) scored
     
     mapM_ print (zip scored (map fromJust urls))
     
